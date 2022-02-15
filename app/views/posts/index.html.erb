@@ -14,7 +14,8 @@
 
 <% @posts.each do |post| %>
   <div class="post-box">
-    <p><%= post.user.name %> said:</p>
+    <%# <p><%= link_to post.user.name, posts_show_path %>
+    <p><%= link_to 'user#show '%> <%= post.user.name %>, said:</p>
     <p><%= post.created_at.to_date.strftime('%d %b %Y') %></p>
     <p><%= post.message %></p>
     

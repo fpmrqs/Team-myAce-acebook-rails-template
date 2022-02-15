@@ -73,4 +73,9 @@ RSpec.feature "Sign up", type: :feature do
       expect(page).to have_content("Welcome! You have signed up successfully.")
     end
   end
+
+  scenario 'On sign_up/sign_in user is redirected to personal wall' do
+    sign_up_user
+    expect(page).to have_content("Amy Ace's myAce Wall")
+  end
 end

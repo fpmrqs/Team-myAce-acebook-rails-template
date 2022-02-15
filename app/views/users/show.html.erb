@@ -1,0 +1,9 @@
+<div class="text-center", style="padding: 10px">
+<br>
+<% @posts.each do |post| %>
+  <%= post.user.name %>
+  <%= post.created_at %>
+  <%= post.message %>
+<% end %>
+
+</div>
