@@ -7,6 +7,15 @@ Project for Makers Academy weeks 8 & 9 using Ruby on Rails
 
 Our site is hosted on Heroku: [myAce website](http://myace.herokuapp.com/users/sign_up)
 
+### How to use:
+
+Clone this repository, then do the following:
+```
+> bundle install
+> bin/rails db:migrate
+> bin/rails server # Start the server at localhost:3000
+```
+
 ### __User Stories__
 
 ```
