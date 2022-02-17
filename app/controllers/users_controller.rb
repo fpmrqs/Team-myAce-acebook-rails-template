@@ -29,8 +29,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    current_user.update(user_params)
-    redirect_to root_path
+    begin
+      current_user.update(user_params)
+      redirect_to root_path
+    rescue 
+      render "error_user_not_found" and return
+    end
   end
 
   private
