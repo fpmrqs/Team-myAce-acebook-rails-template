@@ -1,9 +1,16 @@
 <div class="text-center">
-<br>
-<p><%= @post.message %></p>
-<% if current_user.id == @post.user.id %>
-  <%= link_to "Edit post", edit_post_path(@post) %>
-<% end %>
-
-
+ <div class="card">
+  <div class="card-body">
+   <h5 class="card-title">
+     <a href="<%= user_path(@post.user.id) %>">
+      <strong><%= @post.user.name %></strong>
+     </a> said:
+   </h5>
+   <br>
+   <p><%= @post.message %></p>
+    <% if current_user.id == @post.user.id %>
+    <%= link_to "Edit post", edit_post_path(@post) %>
+   <% end %>
+  </div>
+ </div>
 </div>
