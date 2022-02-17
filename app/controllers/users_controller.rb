@@ -24,13 +24,14 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
-    # render template: => ('Edit registration', edit_user_registration_path)
-    # edit_user_registration_path
   end
 
   def update
+    begin
     current_user.update(user_params)
+    rescue
     redirect_to root_path
+    end
   end
 
   private
