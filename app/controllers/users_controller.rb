@@ -1,6 +1,7 @@
 # redirecting to posts index even when posting on user wall 
 
 class UsersController < ApplicationController
+
   def show
     assign_user
     @posts = Post.all.where(receiver_id: params[:id]).order("created_at DESC")
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    redirect_to edit_user_registration_path
+    redirect_to root_path
   end
 
   private

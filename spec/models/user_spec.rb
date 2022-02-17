@@ -33,4 +33,5 @@ RSpec.describe User, type: :model do
     @user.update(name: "Guy Guyson")
     expect(User.find_by_name("Guy Guyson")).to eq(@user)
   end
+
 end
