@@ -1,7 +1,7 @@
 # redirecting to posts index even when posting on user wall 
 
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
+
   def show
     assign_user
     @posts = Post.all.where(receiver_id: params[:id]).order("created_at DESC")
