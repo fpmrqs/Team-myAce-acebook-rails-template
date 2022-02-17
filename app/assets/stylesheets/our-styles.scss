@@ -38,7 +38,9 @@
     font-weight: 400;
     border: none;
     margin-right: 0;
-
+  }
+  input[type="submit"]:hover {
+    background-color: #fd8379;
   }
 }
 
