@@ -27,14 +27,13 @@ class UsersController < ApplicationController
   end
 
   def update
-    skip_before_action :verify_authenticity_token
     current_user.update(user_params)
-    redirect_to root_path
+    render root_path
   end
 
   private
   def user_params
-    params.require(:user).permit(:avatar,:name, :email, :id)
+    params.require(:user).permit(:avatar, :name, :email, :id)
   end
 
   
