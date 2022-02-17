@@ -9,9 +9,10 @@
   </head>
 
   <body>
+    <%= render 'shared/header'%>
     <div class="text-center">
-      <%= render 'shared/header'%>
-      <p><%= flash.notice %></p>
+      
+      <%= render 'shared/flash'%>
       <%= yield %>
     </div>
   </body>
