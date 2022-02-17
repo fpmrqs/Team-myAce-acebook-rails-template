@@ -1,16 +1,28 @@
 <div class="text-center">
  <div class="card">
   <div class="card-body">
+  <div class="wrapper">
+     <div class="avatar">
+      <% if @post.user.avatar.attached? %>
+       <%= image_tag @post.user.avatar, class: "avatar-img" %>
+      <% end %>
+     </div>
    <h5 class="card-title">
      <a href="<%= user_path(@post.user.id) %>">
       <strong><%= @post.user.name %></strong>
      </a> said:
    </h5>
+  </div>
    <br>
    <p><%= @post.message %></p>
-    <% if current_user.id == @post.user.id %>
-    <%= link_to "Edit post", edit_post_path(@post) %>
-   <% end %>
+   <footer class="post-footer">
+     <div class="post-date">
+      <%= @post.created_at.to_date.strftime("%d %b %Y") %> 
+     </div>
+     <% if current_user.id == @post.user.id %>
+      <%= link_to "Edit post", edit_post_path(@post) %>
+     <% end %>
+    </footer>
   </div>
  </div>
 </div>
