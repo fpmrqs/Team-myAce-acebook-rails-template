@@ -1,7 +1,6 @@
 # redirecting to posts index even when posting on user wall 
 
 class UsersController < ApplicationController
-  skip_before_action :verify_authenticity_token
 
   def show
     assign_user
@@ -29,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     current_user.update(user_params)
-    render root_path
+    render current_user_path
   end
 
   private
