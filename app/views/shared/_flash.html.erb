@@ -1,8 +1,10 @@
 
-<div style="width: 700px; margin: auto; height: 30px">
+<div class="alert-box" id="flash">
   <% flash.each do | type, message| %>
     <div class="alert <%= bootstrap_class_for(type) %> alert-dismissible show fade" role="alert">
-    <%= message %>
+      
+      <%= message %>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" onclick="document.getElementById('flash').style.display='none';"></button>
     </div>
   <% end %>
 </div>
