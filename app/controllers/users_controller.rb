@@ -27,11 +27,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    begin
+    skip_before_action :verify_authenticity_token
     current_user.update(user_params)
-    rescue
     redirect_to root_path
-    end
   end
 
   private
