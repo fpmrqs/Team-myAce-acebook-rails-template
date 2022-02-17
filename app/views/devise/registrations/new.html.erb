@@ -1,39 +1,56 @@
-<div class="text-center">
-<br>
-<h2>Sign up</h2>
-<br>
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<body class="sign-in-body">
+  <div class="text-center">
+    <br>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+    <div class="sign-up-container">
+      <div class="svg-container">
+        <svg id="Layer_1" height="100%" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 358.49 467.82"><defs><style>.cls-1{fill:#001852;}.cls-2{fill:url(#linear-gradient);}.cls-3{fill:url(#linear-gradient-2);}.cls-4{fill:url(#linear-gradient-3);}</style><linearGradient id="linear-gradient" x1="-1278.07" y1="279.59" x2="-1219.65" y2="336.32" gradientTransform="matrix(-1, -0.08, -0.08, 1, -1052.96, -244.05)" gradientUnits="userSpaceOnUse"><stop offset="0.2" stop-color="#001852"/><stop offset="0.8" stop-color="#fd8379"/><stop offset="1" stop-color="#fff"/></linearGradient><linearGradient id="linear-gradient-2" x1="-1167.89" y1="367.57" x2="-1119.52" y2="411.49" gradientTransform="matrix(-1, -0.08, -0.08, 1, -1052.96, -244.05)" gradientUnits="userSpaceOnUse"><stop offset="0.2" stop-color="#001852"/><stop offset="0.8" stop-color="#fd8379"/></linearGradient><linearGradient id="linear-gradient-3" x1="-1255.69" y1="630.34" x2="-1414.73" y2="207.01" gradientTransform="matrix(-1, -0.08, -0.08, 1, -1052.96, -244.05)" gradientUnits="userSpaceOnUse"><stop offset="0.2" stop-color="#001852"/><stop offset="0.79" stop-color="#fd8379"/></linearGradient></defs><path class="cls-1" d="M21.75,231.56,0,192.51,252.5,0l64.27,23.66L138.91,441.93l-46.8-84,39.57-82.71L70.82,194.13Zm141.4-21,65.67-135.1L115.64,161.21Z"/><polygon class="cls-2" points="157.54 192.09 132.7 166.29 191.87 121.46 179.78 146.34 145.26 172.54 159.51 188.03 157.54 192.09"/><polygon class="cls-1" points="163.83 180.92 155.82 172.6 174.91 158.13 171.01 166.16 159.87 174.61 164.47 179.61 163.83 180.92"/><polygon class="cls-3" points="66.34 217.01 75.06 228.62 47.51 249.58 32.95 242.43 66.34 217.01"/><polygon class="cls-4" points="151.82 450.33 187.01 467.82 358.49 64.54 328.85 34 151.82 450.33"/></svg>
+      </div>
+
+      <div class="sign-in-form">
+        <h2>Sign up</h2>
+        <br>
+
+        <!-- SIGN UP FORM -->
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <!-- USER NAME -->
+          <div class="field">
+            <%= f.label :name %><br />
+            <%= f.text_field :name, autofocus: true, autocomplete: "name", class:"text-input" %>
+          </div>
+
+          <!-- EMAIL -->
+          <div class="field">
+            <%= f.label :email %><br />
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"text-input" %>
+          </div>
+
+          <!-- PASSWORD -->
+          <div class="field">
+            <%= f.label :password %>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class:"text-input" %>
+          </div>
+
+          <!-- PASSWORD CONFIRMATION -->
+          <div class="field">
+            <%= f.label :password_confirmation %><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"text-input" %>
+          </div>
+
+          <div class="actions">
+            <%= f.submit "Sign up" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+      <br>
+
+    <!-- <%= render "devise/shared/links" %> -->
+
   </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-<br>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-<br>
-<%= render "devise/shared/links" %>
-
-</div>
-
+</body>

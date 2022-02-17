@@ -1,0 +1,33 @@
+.update-profile-form {
+  justify-content: flex-end;
+  background-color: #d8e0f1;
+  width: 30em;
+  margin: 5em auto auto auto;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  border: 0.5em solid #00195252;
+  .field .text-input {
+    // padding: 1em;
+    height: 2em;
+    border: none;
+    width: 80%;
+    margin-bottom: 15px;
+  }
+  label {
+    margin: none;
+    font-weight: 700;
+  }
+  .actions input[type="submit"] {
+    background-color: #fd8379;
+    padding: 0.5em 1.2em;
+    margin: 2em;
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    border: none;
+  }
+  .actions input[type="submit"]:hover {
+    background-color: #001852;
+  }
+}
