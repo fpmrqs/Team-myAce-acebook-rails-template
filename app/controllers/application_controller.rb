@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   rescue_from ActionController::InvalidAuthenticityToken do |exception|
-    render current_user_path # Example method that will destroy the user cookies
+    sign_out_user # Example method that will destroy the user cookies
   end
   
   def authenticate_user(current_user)!
