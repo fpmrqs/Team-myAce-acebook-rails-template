@@ -8,7 +8,6 @@ Rails.application.configure do
 
   config.active_storage.service = :amazon
   
-
   # Do not eager load code on boot.
   config.eager_load = false
 
