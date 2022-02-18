@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  rescue_from ActionController::InvalidAuthenticityToken, :with => :handle_token_issues
   
   def authenticate_user(current_user)!
     if user_signed_in?
@@ -9,6 +11,10 @@ class ApplicationController < ActionController::Base
       redirect_to new_user_session_path
     end
   end 
+
+  def handle_token_issues
+    redirect_to("/") #redirect to page for handling this issue
+    end
 
   def render_not_found
     render :file => "#{RAILS_ROOT}/public/404.html",  :status => 404
