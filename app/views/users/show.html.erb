@@ -1,8 +1,6 @@
 <div class="user-wrapper">
   <div class="avatar">
-    <% if @user.avatar.attached? %>
-      <%= image_tag @user.avatar, class: "avatar-img" %>
-    <% end %>
+    <%= image_tag @user.check_avatar, class: "avatar-img" %>
   </div>
   <!-- USER NAME -->
   <div class="user-details">
@@ -38,9 +36,7 @@
       <!-- AVATAR -->
       <div class="wrapper">
         <div class="avatar">
-          <% if post.user.avatar.attached? %>
-            <%= image_tag post.user.avatar, class: "avatar-img" %>
-          <% end %>
+          <%= image_tag post.user.check_avatar, class: "avatar-img" %>
         </div>
         <!-- USER NAME -->
         <h5 class="card-title">
