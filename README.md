@@ -1,22 +1,66 @@
 # <img src='./public/images/myace_logo_v2.svg' style='height: 100px'>
 ## myAce: The next revolution in social media!
-#### Created by: Ben, Anthony, Fran, Jason, Naima, and Sahil
-Project for Makers Academy weeks 8 & 9 using Ruby on Rails
+myAce is a social media website built using Ruby on Rails. This is the challenge for weeks 8 and 9 of the Makers Academy curriculum.
 
-*Primary gems used: Devise for users and secuity, Bootstrap for design*
+#### Created by: 
+[Anthony](https://github.com/OrganicAC)  
+[Ben](https://github.com/BenCoyne)  
+[Fran](https://github.com/fpmrqs)  
+[Jason](https://github.com/J-son1)  
+[Naima](https://github.com/naima90)  
+[Sahil](https://github.com/ssgujral)
 
-Our site is hosted on Heroku: [myAce website](http://myace.herokuapp.com/users/sign_up)
+#### Live version
 
-### How to use:
+Our app is hosted on Heroku: [myAce website](http://myace.herokuapp.com/users/sign_up)
 
-Clone this repository, then do the following:
+#### Technologies
+
+myAce was built using Ruby on Rails, Bootstrap, PostgreSQL, Rspec, Capybara
+
+### How to use
+Clone this repository, then install gems using the following command:
 ```
 > bundle install
+```
+To get the database schema ready, run:
+```
 > bin/rails db:migrate
-> bin/rails server # Start the server at localhost:3000
+```
+To start a local server and access the application at http://localhost:3000/
+```
+> bin/rails server
 ```
 
-### __User Stories__
+### Tests
+To run unit and feature tests, use the following command:
+```
+> bundle exec rspec
+```
+
+### Features
+At myAce, users can:
+
+- Register
+- Log in and out (authentication)
+- Modify their details
+- Upload an avatar picture
+- Post dated messages to a general feed
+- Post on their own wall
+- Post on other user's walls
+- Edit or delete their own posts
+
+### Screens
+
+![Log in page](images/signin-page.png)
+![Registration page](images/signup-page.png)  
+![Main Feed page](images/feed-page.png)  
+![Main Feed page 2](images/feed-page-2.png)  
+![User's wall page](images/profile-page.png)
+
+
+
+### User Stories
 
 ```
 As an avid user of myAce,
@@ -113,11 +157,5 @@ As an awesome developer of myAce,
 So users are not confused if they visit a non-existent user page,
 I want a custom 404 to let them know what happened
 ```
-
-### __Wireframes__
-
-# <img src='./public/images/wireframe-1.png' style='height: 500px'>
-
-# <img src='./public/images/wireframe-2.png' style='height: 500px'>
 
 
